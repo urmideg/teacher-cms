@@ -27,6 +27,15 @@ $factory->define(App\User::class, function (Faker $faker) {
  */
 $factory->state(App\User::class, 'admin', [
       'name' => 'admin',
+      'isAdmin' => 1,
       'email' => 'admin@test.ru',
+      'password' => bcrypt('123456'),
+]);
+/**
+ * Состояние для учетной записи пользователя
+ */
+$factory->state(App\User::class, 'user', [
+      'name' => 'user',
+      'email' => 'user@test.ru',
       'password' => bcrypt('123456'),
 ]);
